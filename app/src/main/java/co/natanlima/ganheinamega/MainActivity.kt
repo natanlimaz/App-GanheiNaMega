@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val qtd = text.toInt()
 
         if(qtd < 6 || qtd > 15){
-            Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Informe um número entre 6 e 15", Toast.LENGTH_LONG).show()
             return
         }
 
@@ -64,7 +64,9 @@ class MainActivity : AppCompatActivity() {
             numbers.add(number + 1)
         }
 
-        txtResult.text = numbers.joinToString(" - ")
+        val listSorted = numbers.sorted()
+
+        txtResult.text = listSorted.joinToString(" - ")
 
         val editor = preferences.edit()
         editor.putString("result", txtResult.text.toString())
