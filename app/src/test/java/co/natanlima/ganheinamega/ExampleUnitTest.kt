@@ -1,4 +1,4 @@
-package co.tiagoaguiar.ganheinamega
+package co.natanlima.ganheinamega
 
 import org.junit.Test
 

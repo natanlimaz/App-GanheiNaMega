@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.setTitle("Gerador Mega Sena")
+
         val editText: EditText = findViewById(R.id.edit_number)
         val txtResult: TextView = findViewById(R.id.txt_result)
         val btnGenerate: Button = findViewById(R.id.btn_generate)
 
-        // shared preferences eh um arquivo armazenado dentro do seu smartphone com informaços no formato xml, e essas infos  tambem teramo suas props e seus valores
-        //database preferences
         preferences = getSharedPreferences("database", Context.MODE_PRIVATE)
         val result = preferences.getString("result", null)
 
@@ -70,11 +70,6 @@ class MainActivity : AppCompatActivity() {
         editor.putString("result", txtResult.text.toString())
         editor.apply()
 
-        /*
-        * commit -> salvar de forma síncrona (bloquear a interface gráfica) e informar se teve sucesso ou não (usar quando é um dado muito muito simples)
-        *
-        * apply -> salvar de forma assíncrona (não vai bloquear a interface gráfica) e não vai informar se teve sucesso ou não (ESSE EH O QUE O GOOGLE RECOMENDA USAR)
-        * */
     }
 
 }
