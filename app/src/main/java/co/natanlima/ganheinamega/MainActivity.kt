@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val numbers = mutableSetOf<Int>()
 
         val random = Random()
-
+        //[3, 4, 8, 4, 2, 6]
         while (numbers.size != qtd) {
             val number = random.nextInt(60) // 0..59
             numbers.add(number + 1)
